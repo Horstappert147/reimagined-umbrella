@@ -1,93 +1,90 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+/* Nieuwe stijlen voor de uitgebreide app */
+
+.datum-navigatie {
     display: flex;
-    justify-content: center;
-    padding-top: 50px;
-    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+.datum-navigatie button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-h1 {
-    color: #007bff;
+.datum-navigatie input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 16px;
 }
 
-/* Invoer styling */
 .invoer-groep {
-    display: flex;
-    margin-bottom: 20px;
+    /* Zorg dat de tijd-invoer erbij past */
+    display: flex; 
+    gap: 5px; /* Voeg wat ruimte toe tussen elementen */
 }
 
 #taakInvoer {
     flex-grow: 1;
+}
+
+#tijdInvoer {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
     font-size: 16px;
+    width: 80px; /* Vaste breedte voor tijd */
 }
 
-.invoer-groep button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    font-size: 16px;
+/* Streak weergave */
+.streak-box {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #28a745; /* Groen voor een positieve beloning */
+    background-color: #e9ffe9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #28a745;
 }
 
-.invoer-groep button:hover {
-    background-color: #0056b3;
+/* Standaard taken beheer */
+.opgeslagen-taken-titel {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
-/* Taken lijst styling */
-#takenLijst {
+#opgeslagenTakenLijst {
     list-style: none;
     padding: 0;
+    margin-bottom: 10px;
 }
 
-#takenLijst li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f9f9f9;
+#opgeslagenTakenLijst li {
+    background-color: #f0f0f0;
+    color: #666;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}
+
+#toonToevoegenKnop {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    border-left: 5px solid #007bff;
-    transition: background-color 0.3s;
-    cursor: pointer; /* Om aan te geven dat je kunt klikken */
-}
-
-/* Stijl voor afgevinkte taken */
-#takenLijst li.afgevinkt {
-    text-decoration: line-through;
-    color: #888;
-    border-left-color: #28a745; /* Groene rand */
-    background-color: #e9ffe9;
-}
-
-.verwijder-knop {
-    background: none;
+    background-color: #6c757d;
+    color: white;
     border: none;
-    color: #dc3545;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 1;
-}
-
-.verwijder-knop:hover {
-    color: #c82333;
+    margin-top: 10px;
 }
