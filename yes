@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine Tracker - Voor de Vrienden</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Onze Ochtendroutine Tracker</h1>
+        
+        <div class="invoer-groep">
+            <input type="text" id="taakInvoer" placeholder="Nieuwe routine taak...">
+            <button onclick="taakToevoegen()">Toevoegen</button>
+        </div>
+
+        <h2>Mijn Routine:</h2>
+        <ul id="takenLijst">
+            </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
