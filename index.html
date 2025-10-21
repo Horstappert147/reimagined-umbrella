@@ -17,34 +17,38 @@
             <span class="datum-weergave-tekst">
                 <input type="date" id="datumKiezer" onchange="laadRoutineVoorDatum()">
             </span>
-            <button onclick="changeDate(1)"><i class="fas fa-chevron-right"></i></button>
+            <button onclick="changeDate(1)">Volgende Dag <i class="fas fa-chevron-right"></i></button>
         </div>
 
         <div class="streak-box">
             <i class="fas fa-fire-alt"></i> Huidige Streak: <span id="streakTeller">0</span> dagen
         </div>
 
-        <h2><i class="fas fa-calendar-check"></i> Dagelijkse Planning:</h2>
-        <ul id="takenLijst" class="routine-planning">
-            </ul>
+        <h2><i class="fas fa-plus-circle"></i> Nieuwe Taak Toevoegen</h2>
+        <div class="invoer-groep always-visible">
+            <input type="text" id="taakInvoer" placeholder="Nieuwe taak (bv. Opstaan om 07:00)">
+            <input type="time" id="tijdInvoer" value="08:00">
+            <button onclick="taakToevoegen()" class="toevoeg-knop"><i class="fas fa-plus"></i> Toevoegen</button>
+        </div>
+
+        <h2><i class="fas fa-calendar-check"></i> Dagplanning (Kwartier):</h2>
+        <div id="timelineContainer">
+            </div>
         
-        <button onclick="toonStandaardTakenToevoegen()" id="toonToevoegenKnop" class="beheer-knop">
+        <button onclick="toonStandaardBeheer()" id="toonBeheerKnop" class="beheer-knop">
              <i class="fas fa-cogs"></i> Beheer Standaard Routine
         </button>
         
         <div class="standaard-beheer-sectie">
-            <div class="invoer-groep">
-                <input type="text" id="taakInvoer" placeholder="Nieuwe taak (bv. Opstaan om 07:00)">
-                <input type="time" id="tijdInvoer" value="08:00">
-                <button onclick="taakToevoegen()" class="toevoeg-knop"><i class="fas fa-plus"></i></button>
-            </div>
-
             <div class="opgeslagen-taken-titel">
-                 Huidige Standaard Taken:
+                 Huidige Standaard Taken (Klik om te verwijderen):
             </div>
             <ul id="opgeslagenTakenLijst" class="standaard-taken-lijst">
                 </ul>
         </div>
+        
+        <input type="file" id="fotoUploader" accept="image/*" style="display: none;">
+
     </div>
 
     <script src="script.js"></script>
