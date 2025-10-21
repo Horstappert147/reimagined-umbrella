@@ -4,39 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Routine Tracker - Voor de Vrienden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Onze Ochtendroutine Tracker</h1>
+        <h1><i class="fas fa-sun"></i> De Ochtendroutine</h1>
 
         <div class="datum-navigatie">
-            <button onclick="changeDate(-1)">&lt; Vorige Dag</button>
-            <input type="date" id="datumKiezer" onchange="laadRoutineVoorDatum()">
-            <button onclick="changeDate(1)">Volgende Dag &gt;</button>
+            <button onclick="changeDate(-1)"><i class="fas fa-chevron-left"></i></button>
+            <span class="datum-weergave-tekst">
+                <input type="date" id="datumKiezer" onchange="laadRoutineVoorDatum()">
+            </span>
+            <button onclick="changeDate(1)"><i class="fas fa-chevron-right"></i></button>
         </div>
 
         <div class="streak-box">
-            Huidige Streak: <span id="streakTeller">0</span> dagen
+            <i class="fas fa-fire-alt"></i> Huidige Streak: <span id="streakTeller">0</span> dagen
         </div>
 
-        <h2>Taken voor Vandaag (<span id="huidigeDatumWeergave"></span>):</h2>
+        <h2><i class="fas fa-calendar-check"></i> Dagelijkse Planning:</h2>
+        <ul id="takenLijst" class="routine-planning">
+            </ul>
         
-        <div class="invoer-groep">
-            <input type="text" id="taakInvoer" placeholder="Nieuwe routine taak...">
-            <input type="time" id="tijdInvoer" value="08:00">
-            <button onclick="taakToevoegen()">Toevoegen</button>
+        <button onclick="toonStandaardTakenToevoegen()" id="toonToevoegenKnop" class="beheer-knop">
+             <i class="fas fa-cogs"></i> Beheer Standaard Routine
+        </button>
+        
+        <div class="standaard-beheer-sectie">
+            <div class="invoer-groep">
+                <input type="text" id="taakInvoer" placeholder="Nieuwe taak (bv. Opstaan om 07:00)">
+                <input type="time" id="tijdInvoer" value="08:00">
+                <button onclick="taakToevoegen()" class="toevoeg-knop"><i class="fas fa-plus"></i></button>
+            </div>
+
+            <div class="opgeslagen-taken-titel">
+                 Huidige Standaard Taken:
+            </div>
+            <ul id="opgeslagenTakenLijst" class="standaard-taken-lijst">
+                </ul>
         </div>
-
-        <ul id="takenLijst">
-            </ul>
-
-        <div class="opgeslagen-taken-titel">
-             </div>
-        <ul id="opgeslagenTakenLijst">
-            </ul>
-        <button onclick="toonStandaardTakenToevoegen()" id="toonToevoegenKnop">Beheer Standaard Taken</button>
-
     </div>
 
     <script src="script.js"></script>
