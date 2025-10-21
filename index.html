@@ -9,15 +9,34 @@
 <body>
     <div class="container">
         <h1>Onze Ochtendroutine Tracker</h1>
+
+        <div class="datum-navigatie">
+            <button onclick="changeDate(-1)">&lt; Vorige Dag</button>
+            <input type="date" id="datumKiezer" onchange="laadRoutineVoorDatum()">
+            <button onclick="changeDate(1)">Volgende Dag &gt;</button>
+        </div>
+
+        <div class="streak-box">
+            Huidige Streak: <span id="streakTeller">0</span> dagen
+        </div>
+
+        <h2>Taken voor Vandaag (<span id="huidigeDatumWeergave"></span>):</h2>
         
         <div class="invoer-groep">
             <input type="text" id="taakInvoer" placeholder="Nieuwe routine taak...">
+            <input type="time" id="tijdInvoer" value="08:00">
             <button onclick="taakToevoegen()">Toevoegen</button>
         </div>
 
-        <h2>Mijn Routine:</h2>
         <ul id="takenLijst">
             </ul>
+
+        <div class="opgeslagen-taken-titel">
+             </div>
+        <ul id="opgeslagenTakenLijst">
+            </ul>
+        <button onclick="toonStandaardTakenToevoegen()" id="toonToevoegenKnop">Beheer Standaard Taken</button>
+
     </div>
 
     <script src="script.js"></script>
