@@ -1,7 +1,7 @@
 /* Gebruik Inter font voor een modern uiterlijk */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #e9ecef; /* Zachte grijze achtergrond */
+    background-color: #f0f3f6; /* Lichtere, moderne achtergrond */
     color: #343a40;
     display: flex;
     justify-content: center;
@@ -13,13 +13,13 @@ body {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     width: 100%;
-    max-width: 550px;
+    max-width: 600px; /* Iets breder voor de timeline */
 }
 
 h1 {
-    color: #4a6fa5; /* Een ingetogen blauwtint */
+    color: #4a6fa5;
     text-align: center;
     margin-bottom: 25px;
     font-weight: 700;
@@ -28,26 +28,24 @@ h1 {
 h2 {
     color: #343a40;
     font-size: 1.2em;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 30px;
     margin-bottom: 15px;
-    border-bottom: 2px solid #f8f9fa;
     padding-bottom: 5px;
 }
 
 /* ---------------------------------- */
-/* Datum Navigatie */
+/* Datum Navigatie & Streak */
 /* ---------------------------------- */
 .datum-navigatie {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    background-color: #f8f9fa;
+    background-color: #e9eff9;
     padding: 10px;
     border-radius: 8px;
 }
-
 .datum-navigatie button {
     background-color: #4a6fa5;
     color: white;
@@ -56,143 +54,42 @@ h2 {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s;
+    font-weight: 600;
 }
-
 .datum-navigatie button:hover {
     background-color: #3b598d;
 }
-
-.datum-weergave-tekst {
-    font-weight: 600;
-    font-size: 1.1em;
-    color: #343a40;
-}
-
 #datumKiezer {
     border: 1px solid #ced4da;
     border-radius: 4px;
     padding: 5px;
     font-size: 1em;
     text-align: center;
+    font-weight: 600;
 }
-
-/* ---------------------------------- */
-/* Streak Box */
-/* ---------------------------------- */
 .streak-box {
     text-align: center;
     font-size: 1em;
     font-weight: 600;
-    color: #1e7e34; /* Donkergroen */
+    color: #1e7e34;
     background-color: #d4edda;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 25px;
-}
-.streak-box i {
-    color: #ffc107; /* Vuur-icoon in geel */
-    margin-right: 5px;
+    border: 1px solid #a3cfb5;
 }
 
 /* ---------------------------------- */
-/* De Routine Planning Lijst */
+/* Altijd Zichtbare Invoer */
 /* ---------------------------------- */
-#takenLijst.routine-planning {
-    list-style: none;
-    padding: 0;
-}
-
-#takenLijst li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f9fa;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    border-left: 5px solid #4a6fa5; /* Blauwe accentrand */
-    transition: all 0.2s;
-}
-
-#takenLijst li:hover {
-    background-color: #f1f3f5;
-}
-
-/* Status: Afgevinkt */
-#takenLijst li.afgevinkt {
-    text-decoration: line-through;
-    color: #6c757d;
-    border-left-color: #28a745; /* Groene rand */
-    background-color: #e9ffe9;
-    /* Zorgt ervoor dat de tekst niet te grijs wordt en nog leesbaar is */
-}
-
-/* Elementen binnen de LI */
-.taak-info {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-}
-
-.tijd-stempel {
-    font-weight: 700;
-    color: #4a6fa5;
-    background-color: #e9eff9;
-    padding: 3px 8px;
-    border-radius: 4px;
-    margin-right: 15px;
-    font-size: 0.9em;
-    min-width: 50px; /* Zorgt dat de tijd altijd dezelfde breedte heeft */
-    text-align: center;
-}
-
-.taak-tekst {
-    font-weight: 600;
-}
-
-.check-icoon {
-    font-size: 1.2em;
-    color: #6c757d; /* Standaard grijs */
-}
-
-#takenLijst li.afgevinkt .check-icoon {
-    color: #28a745; /* Groen als afgevinkt */
-}
-
-
-/* ---------------------------------- */
-/* Beheer Sectie (Verborgen/Toevoegen) */
-/* ---------------------------------- */
-.beheer-knop {
-    width: 100%;
-    padding: 12px;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 20px;
-    transition: background-color 0.2s;
-}
-.beheer-knop:hover {
-    background-color: #5a6268;
-}
-
-.standaard-beheer-sectie {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border: 1px dashed #ced4da;
-    display: none; /* Standaard verborgen */
-}
-
-.invoer-groep {
+.invoer-groep.always-visible {
     display: flex;
     gap: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #f0f3f6;
+    border-radius: 8px;
+    background-color: #f8f9fa;
 }
 
 #taakInvoer, #tijdInvoer {
@@ -218,9 +115,111 @@ h2 {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s;
+    font-weight: 600;
 }
 .toevoeg-knop:hover {
     background-color: #1e7e34;
+}
+
+/* ---------------------------------- */
+/* Timeline Weergave (Kwartier Overzicht) */
+/* ---------------------------------- */
+#timelineContainer {
+    position: relative;
+    padding-left: 50px; /* Ruimte voor de tijden */
+    border-left: 2px solid #ced4da; /* Verticale lijn van de timeline */
+}
+
+.timeline-item {
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-height: 20px; /* Voldoende ruimte voor lege kwartieren */
+}
+
+/* Tijdstempel aan de linkerkant van de lijn */
+.timeline-item-time {
+    position: absolute;
+    left: -65px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Stijl voor afgevinkte taak (een daadwerkelijke activiteit) */
+.timeline-item.activity {
+    background-color: #e9eff9;
+    border: 1px solid #c3d4ee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item.activity:hover {
+     background-color: #dae6f7;
+}
+
+.timeline-item.activity.afgevinkt {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+    color: #495057;
+    text-decoration: none; /* Geen streep door de taaktekst */
+}
+
+.timeline-item-content {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeline-item-content .check-icoon {
+    color: #adb5bd;
+}
+
+.timeline-item.activity.afgevinkt .check-icoon {
+    color: #28a745;
+}
+
+/* Foto Weergave in Timeline Item */
+.taak-foto {
+    max-width: 100%;
+    max-height: 150px;
+    margin-top: 10px;
+    border-radius: 6px;
+    display: block;
+    object-fit: cover;
+}
+
+/* ---------------------------------- */
+/* Standaard Beheer Sectie */
+/* ---------------------------------- */
+.beheer-knop {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+.beheer-knop:hover {
+    background-color: #5a6268;
+}
+
+.standaard-beheer-sectie {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #ced4da;
+    display: none; /* Standaard verborgen */
 }
 
 .opgeslagen-taken-titel {
